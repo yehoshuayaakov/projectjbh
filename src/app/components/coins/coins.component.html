@@ -1,0 +1,32 @@
+
+            <div class="card-body">
+                <div class = "row">
+                    <h5 class="col card-title">{{card.name}}</h5>
+                    <div  class="custom-control custom-switch">
+                            <input  (click) = 'addToList(card.symbol)' type="checkbox" class="custom-control-input" [id]="card.name ">
+                            <label class="custom-control-label" [for]="card.name"></label>
+                    </div>
+                      
+                </div>
+                <p class="card-text">{{card.symbol}}</p>
+                
+                <p>
+                         <button  (click) = "showmore(card.id)" class="btn btn-primary" type="button" >
+                          More Info
+                        </button>
+                      </p>
+                      
+                 <div *ngIf = 'showinfo' >      
+                        <div *ngIf = 'show' class="text-center">
+                                <div class="spinner-border" role="status">
+                                  <span class="sr-only">Loading...</span>
+                                </div>
+                              </div>
+                    <img src = {{coin.image.small}} class="card-text">
+                 <p class="card-text">{{card.market_data.current_price.usd | currency:'USD'}}</p>
+                 <p class="card-text">{{card.market_data.current_price.eur | currency:'EUR'}}</p>
+                 <p class="card-text">{{card.market_data.current_price.aud | currency:'AUD'}}</p>
+            </div>
+        </div>
+ 
+ 
